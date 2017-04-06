@@ -91,7 +91,6 @@ function gshg_admin_bar_links() {
 
 }
 
-// add_action( 'admin_enqueue_scripts', 'gshg_hooks_stylesheet' );
 add_action( 'wp_enqueue_scripts', 'gshg_hooks_stylesheet' );
 /**
  * Load stylesheet.
