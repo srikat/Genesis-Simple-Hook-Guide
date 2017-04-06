@@ -28,11 +28,11 @@ Credits:
 Sure! The views are triggered by a query string. Simply add `?g_hooks=show` to the end of the URL.
 
 ## Screenshots
-- !["Action Hooks" admin bar menu item under "Genesis Hooks"](http://d.pr/i/EfdE+ "Action Hooks admin bar menu item under Genesis Hooks")
+- !["Action Hooks" under "Genesis Hooks" admin bar menu item](http://d.pr/i/j0ln+ "Action Hooks under Genesis Hooks admin bar menu item")
 
-- ![Sample screenshot showing Genesis hooks on the Posts page in Genesis sample child theme](http://d.pr/i/zOAX+ "Sample screenshot showing Genesis hooks on the Posts page in Genesis sample child theme")
+- ![Sample screenshot showing Genesis hooks on the Posts page in Genesis sample child theme](http://d.pr/i/Mjyu+ "Sample screenshot showing Genesis hooks on the Posts page in Genesis sample child theme")
 
-- !["Clear" menu item under "Genesis Hooks"](http://d.pr/i/Z3rQ+ "Clear menu item under Genesis Hooks")
+- !["Clear" menu item under "Genesis Hooks"](http://d.pr/i/99mn+ "Clear menu item under Genesis Hooks")
 
 ## Changelog
 = 0.0.1 =
