@@ -1,0 +1,115 @@
+<?php
+/**
+ * Plugin Name: Genesis Simple Hook Guide
+ * Plugin URI: https://github.com/srikat/Genesis-Simple-Hook-Guide
+ * Description: Find Genesis action hooks easily and select them by a single click at their actual locations in your Genesis theme.
+ * Version: 0.0.1
+ * Author: Sridhar Katakam
+ * Author URI: https://sridharkatakam.com/
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * GitHub Plugin URI: srikat/WP-HighlightJS
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License version 2, as published by the Free Software Foundation.  You may NOT assume
+ * that you can use any other version of the GPL.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ */
+
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+register_activation_hook( __FILE__, 'gshg_activation_check' );
+/**
+ * Check if Genesis is the parent theme.
+ */
+function gshg_activation_check() {
+	$theme_info = wp_get_theme();
+
+	$genesis_flavors = array(
+		'genesis',
+		'genesis-trunk',
+	);
+
+	if ( ! in_array( $theme_info->Template, $genesis_flavors, true ) ) {
+		deactivate_plugins( plugin_basename( __FILE__ ) ); // deactivate ourself.
+		wp_die( 'Sorry, you can\'t activate this plugin unless you have installed <a href="https://my.studiopress.com/themes/genesis/">Genesis</a>.' );
+	}
+}
+
+add_action( 'admin_bar_menu', 'gshg_admin_bar_links', 100 );
+/**
+ * Add admin bar items.
+ */
+function gshg_admin_bar_links() {
+	global $wp_admin_bar;
+
+	if ( is_admin() ) {
+		return;
+	}
+
+	$wp_admin_bar->add_menu(
+		array(
+			'id' => 'ghooks',
+			'title' => __( 'G Hook Guide', 'gsimplehookguide' ),
+			'href' => '',
+			'position' => 0,
+		)
+	);
+	$wp_admin_bar->add_menu(
+		array(
+			'id'	   => 'ghooks_action',
+			'parent'   => 'ghooks',
+			'title'    => __( 'Action Hooks', 'gsimplehookguide' ),
+			'href'     => add_query_arg( 'g_hooks', 'show' ),
+			'position' => 10,
+		)
+	);
+	$wp_admin_bar->add_menu(
+		array(
+			'id'	   => 'ghooks_clear',
+			'parent'   => 'ghooks',
+			'title'    => __( 'Clear', 'gsimplehookguide' ),
+			'href'     => remove_query_arg(
+				array(
+					'g_hooks',
+				)
+			),
+			'position' => 10,
+		)
+	);
+
+}
+
+// add_action( 'admin_enqueue_scripts', 'gshg_hooks_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'gshg_hooks_stylesheet' );
+/**
+ * Load stylesheet.
+ */
+function gshg_hooks_stylesheet() {
+	$gshg_plugin_url = plugins_url() . '/genesis-simple-hook-guide/';
+
+	if ( 'show' == isset( $_GET['g_hooks'] ) ) {
+		wp_enqueue_style( 'gshg_styles', $gshg_plugin_url . 'styles.css' );
+	}
+}
+
+add_action( 'all', function() {
+	// BAIL without hooking into anything if on the admin page or if not displaying anything.
+	if ( is_admin() || ! ( 'show' == isset( $_GET['g_hooks'] ) ) ) {
+		return;
+	}
+
+	global $wp_actions;
+	$filter = current_filter();
+
+	if ( 'genesis_' === substr( $filter, 0, 8 ) ) {
+		if ( isset( $wp_actions[ $filter ] ) ) {
+			printf( '<div id="%1$s" class="genesis-hook"><input type="text" onclick="jQuery(this).select();" value="%1$s" /></div>', $filter );
+		}
+	}
+} );
