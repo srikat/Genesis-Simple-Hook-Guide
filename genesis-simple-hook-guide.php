@@ -71,7 +71,7 @@ function gshg_admin_bar_links() {
 			'id'	   => 'gshg_action',
 			'parent'   => 'gshg',
 			'title'    => __( 'Action Hooks', 'genesis-simple-hook-guide' ),
-			'href'     => esc_url( add_query_arg( 'g_hooks', 'show' ) ),
+			'href'     => esc_url( add_query_arg( 'gshg_hooks', 'show' ) ),
 			'position' => 10,
 		)
 	);
@@ -82,7 +82,7 @@ function gshg_admin_bar_links() {
 			'title'    => __( 'Clear', 'genesis-simple-hook-guide' ),
 			'href'     => esc_url( remove_query_arg(
 				array(
-					'g_hooks',
+					'gshg_hooks',
 				)
 			) ),
 			'position' => 10,
@@ -91,6 +91,7 @@ function gshg_admin_bar_links() {
 
 }
 
+// add_action( 'admin_enqueue_scripts', 'gshg_hooks_stylesheet' );
 add_action( 'wp_enqueue_scripts', 'gshg_hooks_stylesheet' );
 /**
  * Load stylesheet.
@@ -98,7 +99,7 @@ add_action( 'wp_enqueue_scripts', 'gshg_hooks_stylesheet' );
 function gshg_hooks_stylesheet() {
 	$gshg_plugin_css_url = plugins_url( 'style.css', __FILE__ );
 
-	if ( 'show' === filter_input( INPUT_GET, 'g_hooks', FILTER_SANITIZE_STRING ) ) {
+	if ( 'show' === filter_input( INPUT_GET, 'gshg_hooks', FILTER_SANITIZE_STRING ) ) {
 		wp_enqueue_style( 'gshg-styles', $gshg_plugin_css_url );
 	}
 }
@@ -109,7 +110,7 @@ add_action( 'all', 'gshg_print_hooks_on_page' );
  */
 function gshg_print_hooks_on_page() {
 	// BAIL without hooking into anything if on the admin page or if not displaying anything.
-	if ( is_admin() || ! ( 'show' === filter_input( INPUT_GET, 'g_hooks', FILTER_SANITIZE_STRING ) ) ) {
+	if ( is_admin() || ! ( 'show' === filter_input( INPUT_GET, 'gshg_hooks', FILTER_SANITIZE_STRING ) ) ) {
 		return;
 	}
 
