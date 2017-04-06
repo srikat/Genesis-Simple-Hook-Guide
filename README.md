@@ -1,10 +1,4 @@
 # Genesis Simple Hook Guide
-Contributors: srikat
-Tags: genesis, actions, hooks, genesiswp, studiopress, guide
-Requires at least: 3.4
-Tested up to: 4.7.3
-License: GPLv2 or later
-
 Find Genesis action hooks quick and easily by seeing their actual locations inside your theme.
 
 ## Description
@@ -24,8 +18,9 @@ Credits:
 **Genesis Theme Framework required.**
 
 ## Installation
-1. Upload the entire `genesis-simple-hook-guide` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Click on `Clone or download` button, then `Download ZIP`.
+2. Extract the zip file and upload the entire `genesis-simple-hook-guide` folder to the `/wp-content/plugins/` directory
+3. Activate the plugin through the 'Plugins' menu in WordPress
 
 ## Frequently Asked Questions
 ### I have my admin bar disabled, can I still view the hooks without it?
