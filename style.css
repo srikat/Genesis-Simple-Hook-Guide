@@ -13,10 +13,10 @@
 	-webkit-transition: 50ms border-color ease-in-out;
 	transition: 50ms border-color ease-in-out;
 	padding: 3px 5px;
-	font-size: 14px;
 }
 
-.genesis-hook input:hover {
+.genesis-hook input:hover,
+.genesis-hook input:focus {
 	border: 1px solid #21759b;
 }
 

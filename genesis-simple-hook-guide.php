@@ -99,7 +99,7 @@ add_action( 'wp_enqueue_scripts', 'gshg_hooks_stylesheet' );
 function gshg_hooks_stylesheet() {
 	$gshg_plugin_css_url = plugins_url( 'style.css', __FILE__ );
 
-	if ( isset( $_GET['g_hooks'] ) && 'show' === $_GET['g_hooks'] ) {
+	if ( 'show' === filter_input( INPUT_GET, 'g_hooks', FILTER_SANITIZE_STRING ) ) {
 		wp_enqueue_style( 'gshg-styles', $gshg_plugin_css_url );
 	}
 }
@@ -110,7 +110,7 @@ add_action( 'all', 'gshg_print_hooks_on_page' );
  */
 function gshg_print_hooks_on_page() {
 	// BAIL without hooking into anything if on the admin page or if not displaying anything.
-	if ( is_admin() || ! ( 'show' == isset( $_GET['g_hooks'] ) ) ) {
+	if ( is_admin() || ! ( 'show' === filter_input( INPUT_GET, 'g_hooks', FILTER_SANITIZE_STRING ) ) ) {
 		return;
 	}
 
