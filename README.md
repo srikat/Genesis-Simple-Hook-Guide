@@ -28,7 +28,11 @@ Credits:
 Sure! The views are triggered by a query string. Simply add `?g_hooks=show` to the end of the URL.
 
 ## Screenshots
+![Screenshot](http://d.pr/i/EfdE+ "Screenshot")
+
 ![Screenshot](http://d.pr/i/zOAX+ "Screenshot")
+
+![Screenshot](http://d.pr/i/Z3rQ+ "Screenshot")
 
 ## Changelog
 = 0.0.1 =
