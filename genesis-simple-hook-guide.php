@@ -54,7 +54,7 @@ add_action( 'admin_bar_menu', 'gshg_admin_bar_links', 100 );
 function gshg_admin_bar_links() {
 	global $wp_admin_bar;
 
-	if ( is_admin() ) {
+	if ( is_admin() || false === function_exists( 'genesis' ) ) {
 		return;
 	}
 
@@ -91,7 +91,6 @@ function gshg_admin_bar_links() {
 
 }
 
-// add_action( 'admin_enqueue_scripts', 'gshg_hooks_stylesheet' );
 add_action( 'wp_enqueue_scripts', 'gshg_hooks_stylesheet' );
 /**
  * Load stylesheet.
