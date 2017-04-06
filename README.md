@@ -2,7 +2,7 @@
 Find Genesis action hooks quick and easily by seeing their actual locations inside your theme.
 
 ## Description
-This is a simplified version of [Genesis Visual Hook Guide](https://wordpress.org/plugins/genesis-visual-hook-guide/) by Christopher Cochran with the following changes:
+This is a simplified version of [Genesis Visual Hook Guide](https://wordpress.org/plugins/genesis-visual-hook-guide/) by [Christopher Cochran](https://github.com/christophercochran/) with the following changes:
 
 - Hooks are dynamically generated vs being hardcoded
 - Clicking anywhere on a hook selects the hook name ready to be easily copied
@@ -12,8 +12,8 @@ Once installed, this plugin adds a dropdown menu to the admin bar to see the ava
 
 Credits:
 
-- @GaryJones for [the idea](https://genesiswp.slack.com/archives/C02N5FU9J/p1491314376613898)
-- @salcode for [the code](https://genesiswp.slack.com/archives/C02N5FU9J/p1491326278438438)
+- [Gary Jones](https://github.com/GaryJones/) for [the idea](http://d.pr/i/qSKK)
+- [Sal Ferrarello](https://github.com/salcode) for [the code](http://d.pr/i/h2DA)
 
 **Genesis Theme Framework required.**
 
@@ -28,11 +28,11 @@ Credits:
 Sure! The views are triggered by a query string. Simply add `?g_hooks=show` to the end of the URL.
 
 ## Screenshots
-![Screenshot](http://d.pr/i/EfdE+ "Screenshot")
+- !["Action Hooks" admin bar menu item under "Genesis Hooks"](http://d.pr/i/EfdE+ "Action Hooks admin bar menu item under Genesis Hooks")
 
-![Screenshot](http://d.pr/i/zOAX+ "Screenshot")
+- ![Sample screenshot showing Genesis hooks on the Posts page in Genesis sample child theme](http://d.pr/i/zOAX+ "Sample screenshot showing Genesis hooks on the Posts page in Genesis sample child theme")
 
-![Screenshot](http://d.pr/i/Z3rQ+ "Screenshot")
+- !["Clear" menu item under "Genesis Hooks"](http://d.pr/i/Z3rQ+ "Clear menu item under Genesis Hooks")
 
 ## Changelog
 = 0.0.1 =
