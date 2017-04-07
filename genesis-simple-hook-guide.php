@@ -119,7 +119,7 @@ function gshg_print_hooks_on_page() {
 
 	if ( 'genesis_' === substr( $filter, 0, 8 ) ) {
 		if ( isset( $wp_actions[ $filter ] ) ) {
-			printf( '<div id="%1$s" class="genesis-hook"><input type="text" onclick="jQuery(this).select();" value="%1$s" /></div>', $filter );
+			printf( '<div id="%1$s" class="genesis-hook"><input type="text" readonly onclick="jQuery(this).select();" value="%1$s" /></div>', $filter );
 		}
 	}
 }
