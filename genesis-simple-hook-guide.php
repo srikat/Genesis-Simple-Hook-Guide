@@ -139,7 +139,7 @@ function gshg_hooks_script_and_styles() {
 	if ( 'show' === filter_input( INPUT_GET, 'gshg_hooks', FILTER_SANITIZE_STRING ) ) {
 
 		wp_enqueue_style( 'gshg-styles', $gshg_plugin_css_url );
-		wp_enqueue_script( 'gshg-scripts', $gshg_plugin_js_url, array( 'jquery' ) );
+		wp_enqueue_script( 'gshg-scripts', $gshg_plugin_js_url );
 
 	}
 
