@@ -2,13 +2,15 @@
 Find Genesis action hooks quick and easily by seeing their actual locations inside your theme.
 
 ## Description
-This is a simplified version of [Genesis Visual Hook Guide](https://wordpress.org/plugins/genesis-visual-hook-guide/) by [Christopher Cochran](https://github.com/christophercochran/) with the following changes:
+This is a simplified version of [Genesis Visual Hook Guide](https://wordpress.org/plugins/genesis-visual-hook-guide/) plugin by [Christopher Cochran](https://github.com/christophercochran/) with the following changes:
 
 - Hooks are dynamically generated vs being hardcoded
 - Clicking anywhere on a hook selects the hook name ready to be easily copied
 - Does not show filters and markup
 
 Once installed, this plugin adds a dropdown menu to the admin bar to see the available hooks on the page being viewed in the front end.
+
+### [Genesis Simple Hook Guide Hooks Live Demo](http://hooks.wpdemos.co/)
 
 Credits:
 
