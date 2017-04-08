@@ -92,15 +92,17 @@ function gshg_admin_bar_links() {
 }
 
 // add_action( 'admin_enqueue_scripts', 'gshg_hooks_stylesheet' );
-add_action( 'wp_enqueue_scripts', 'gshg_hooks_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'gshg_hooks_script_and_styles' );
 /**
  * Load stylesheet.
  */
-function gshg_hooks_stylesheet() {
+function gshg_hooks_script_and_styles() {
 	$gshg_plugin_css_url = plugins_url( 'style.css', __FILE__ );
+	$gshg_plugin_js_url = plugins_url( 'general.js', __FILE__ );
 
 	if ( 'show' === filter_input( INPUT_GET, 'gshg_hooks', FILTER_SANITIZE_STRING ) ) {
 		wp_enqueue_style( 'gshg-styles', $gshg_plugin_css_url );
+		wp_enqueue_script( 'gshg-scripts', $gshg_plugin_js_url );
 	}
 }
 
@@ -119,7 +121,7 @@ function gshg_print_hooks_on_page() {
 
 	if ( 'genesis_' === substr( $filter, 0, 8 ) ) {
 		if ( isset( $wp_actions[ $filter ] ) ) {
-			printf( '<div id="%1$s" class="genesis-hook"><input type="text" onclick="jQuery(this).select();" value="%1$s" /></div>', $filter );
+			printf( '<div id="%1$s" class="genesis-hook"><input type="text" readonly value="%1$s" /></div>', $filter );
 		}
 	}
 }
