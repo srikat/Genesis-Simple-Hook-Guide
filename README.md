@@ -50,3 +50,7 @@ Sure! The views are triggered by a query string. Simply add `?gshg_hooks=show` t
 * esc_url add_query_arg() and remove_query_arg()
 * Add a check for Genesis so the admin bar links get added only when Genesis is active
 * Change `g_hooks` to `gshg_hooks`
+
+**0.0.3**
+
+* Replace onclick with event listener
