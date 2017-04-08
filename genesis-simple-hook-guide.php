@@ -3,7 +3,7 @@
  * Plugin Name: Genesis Simple Hook Guide
  * Plugin URI: https://github.com/srikat/Genesis-Simple-Hook-Guide
  * Description: Find Genesis action hooks easily and select them by a single click at their actual locations in your Genesis theme.
- * Version: 0.0.2
+ * Version: 0.0.3
  * Author: Sridhar Katakam
  * Author URI: https://sridharkatakam.com/
  * License:           GPL-2.0+
