@@ -12,7 +12,7 @@ This is a simplified version of [Genesis Visual Hook Guide](https://wordpress.or
 
 Once installed, this plugin adds a dropdown menu to the admin bar to see the available hooks on the page being viewed in the front end.
 
-### [Genesis Simple Hook Guide Hooks Live Demo](http://hooks.wpdemos.co/)
+### [Genesis Simple Hook Guide Hooks Live Demo](https://hooks.wpdemos.net)
 
 Credits:
 
